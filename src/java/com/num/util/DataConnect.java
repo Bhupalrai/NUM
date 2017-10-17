@@ -8,6 +8,7 @@ public class DataConnect {
 	public static Connection getConnection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
+			// Implement datasource for credentials, context.xml
 			Connection con = DriverManager.getConnection(
 					"jdbc:mysql://192.168.100.128:3306/db_name","db_user","pwds");
 			return con;
