@@ -9,7 +9,7 @@ public class DataConnect {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection(
-					"jdbc:mysql://192.168.100.128:3306/numdb_dev","reetu","z359Rc76");
+					"jdbc:mysql://192.168.100.128:3306/db_name","db_user","pwds");
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database.getConnection() Error -->"
