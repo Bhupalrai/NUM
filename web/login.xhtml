@@ -4,8 +4,12 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<title>Network User Manager 1.0</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>        
 </h:head>
 <h:body>
+    <div id="login" align="left" style="padding-left: 10px;">
 	<h:form>
 		<h2>Network User Manager</h2>
 		<h:outputText value="Username " />
@@ -18,7 +22,8 @@
 		<h:message for="password"></h:message>
 		<br /><br />
 		
-		<h:commandButton action="#{login.validateUsernamePassword}" value="Login"></h:commandButton>
+                <h:commandButton id="login-btn" action="#{login.validateUsernamePassword}" value="   Login   " class="btn-sm"></h:commandButton>
 	</h:form>
+    </div>
 </h:body>
 </html>

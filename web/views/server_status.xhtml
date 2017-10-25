@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Network User Manager 1.0</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+    </h:head>
+    <body>
+        <div align="left" style="padding-left: 10px;">
+        <br />
+        
+        <h:form>
+            <left><h:commandButton action = "dashboard.xhtml?faces-redirect=true"   
+                value="Home" class="btn btn-info"></h:commandButton></left>  
+
+            <left><h:commandButton action = "monitor.xhtml?faces-redirect=true"   
+                value="Back" class="btn btn-info"></h:commandButton></left> 
+            <br /><br />
+        <left><h:commandButton action = "server_status.xhtml"   
+            value="Refresh data" class="btn btn-success"></h:commandButton></left> 
+        </h:form>
+        <br />
+        <div style="border: thin solid black; margin-left:25px; margin-right:500px;">
+            <div style="margin-left: 10px; margin-top: 10px;">
+                <pre>Server time   : #{serverStatus.system_date_time}</pre>
+                <pre>Server uptime : #{serverStatus.uptime} days</pre>
+                <ui:repeat var="top" value="#{serverStatus.top}"> 
+                <pre>#{top}</pre>
+                </ui:repeat>                
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
