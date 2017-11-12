@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 import com.num.util.DataConnect;
 
-public class LoginDAO {
+public class LoginDAO implements IBaseDAO{
 
 	public static boolean validate(String user, String password) {
 		Connection con = null;

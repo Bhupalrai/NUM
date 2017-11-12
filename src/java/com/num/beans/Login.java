@@ -10,6 +10,10 @@ import javax.servlet.http.HttpSession;
 
 import com.num.dao.LoginDAO;
 import com.num.util.SessionUtils;
+import com.num.util.ReadProperty;
+import java.net.URL;
+import java.net.URLClassLoader;
+import static javax.servlet.SessionTrackingMode.URL;
 
 @ManagedBean
 @SessionScoped
@@ -56,12 +60,24 @@ public class Login implements Serializable {
 			session.setAttribute("username", user);
 			return "views/dashboard?faces-redirect=true";
 		} else {
-			FacesContext.getCurrentInstance().addMessage(
-					null,
-					new FacesMessage(FacesMessage.SEVERITY_FATAL,
-							"Incorrect username or passowrd",
-							"Please enter correct username and Password"));
-			return "login";
+                        //FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
+//			FacesContext.getCurrentInstance().addMessage(
+//					null,
+//					new FacesMessage(FacesMessage.SEVERITY_FATAL,
+//							"Incorrect username or passowrd",
+//							"Please enter correct username and Password"));
+
+
+// message is not shown, seems bug in this version
+                        FacesContext fc =  FacesContext.getCurrentInstance();
+                        FacesMessage fm = new FacesMessage("Invalid username or password");
+                        fc.addMessage("fm_id:login-btn", fm);
+
+    
+                        
+                        
+                        
+                        return "login";
 		}
 	}
 
