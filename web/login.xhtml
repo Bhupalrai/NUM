@@ -1,16 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
 	<title>Network User Manager 1.0</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <h:outputStylesheet library="css" name="bootstrap.min.css"/>        
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputScript library="js" name="input_validators.js" />
 </h:head>
 <h:body>
     <div id="login" align="left" style="padding-left: 10px;">
-	<h:form>
+	<h:form id="fm_id">
 		<h2>Network User Manager</h2>
 		<h:outputText value="Username " />
 		<h:inputText id="username" value="#{login.user}"></h:inputText>
@@ -22,7 +24,9 @@
 		<h:message for="password"></h:message>
 		<br /><br />
 		
-                <h:commandButton id="login-btn" action="#{login.validateUsernamePassword}" value="   Login   " class="btn-sm"></h:commandButton>
+                <h:commandButton id="login-btn"
+                                 onclick="testFunc()"
+                                 action="#{login.validateUsernamePassword}" value="   Login   " class="btn-sm"></h:commandButton>
 	</h:form>
     </div>
 </h:body>
