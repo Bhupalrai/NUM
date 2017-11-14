@@ -1,6 +1,7 @@
 package com.num.beans;
 import com.num.util.GetUpTime;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -66,7 +67,6 @@ public class ServerStatus implements Serializable{
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
             arr.add("Error reading file " + top_out_file);
         }     
         
@@ -84,7 +84,5 @@ public class ServerStatus implements Serializable{
 
     public String getUptime() {
         return uptime;
-    }
-
-    
+    }    
 }

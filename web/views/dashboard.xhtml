@@ -4,29 +4,33 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-	<title>Network User Manager 1.0</title>
+        <title>Network User Manager 1.0</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
+        <h:outputStylesheet library="css" name="bootstrap.min.css"/>        
+        
 </h:head>
 <h:body>
     <div align="left" style="padding-left: 10px;">
 	<h:form>
-            <div>Welcome #{login.user}
-            </div>
-            
+            <div>Hello #{login.user}</div>            
             <br />
             <div>
-            <left><h:commandButton action = "dashboard.xhtml?faces-redirect=true"   
-                value="Home" class="btn btn-info"></h:commandButton></left> 
-                
+                <left><h:commandButton action = "dashboard.xhtml?faces-redirect=true"   
+                    value="Home" class="btn btn-info"></h:commandButton>
+                </left>                 
                 <right><h:commandButton action = "monitor.xhtml?faces-redirect=true"   
-                value="Monitor" class="btn btn-info"></h:commandButton></right> 
+                    value="Monitor" class="btn btn-info"></h:commandButton>
+                </right> 
             </div>
-
             <br />
-            	<h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>
-                      
+            <h:commandLink action="#{login.logout}" value="Logout"></h:commandLink>                      
 	</h:form>
     </div>
+    <br />
+    <div><div><div>
+        <h:form>
+            <h:commandButton id="login-btns" action="#{login.validateUsernamePassword}" value="Manage clients" class="btn-sm"></h:commandButton>                      
+        </h:form>        
+    </div></div></div>
 </h:body>
 </html>

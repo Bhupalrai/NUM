@@ -1,3 +1,3 @@
 function testFunc(){
-    alert("js is working");
+    alert("this is num_js");
 }

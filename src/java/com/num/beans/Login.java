@@ -1,30 +1,21 @@
 package com.num.beans;
 
 import java.io.Serializable;
-
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession; 
 
-import com.num.dao.LoginDAO;
 import com.num.util.SessionUtils;
-import com.num.util.ReadProperty;
-import java.net.URL;
-import java.net.URLClassLoader;
-import static javax.servlet.SessionTrackingMode.URL;
 
-@ManagedBean()
+@ManagedBean(name = "login", eager = true )
 @SessionScoped
 public class Login implements Serializable {
 
-	private static final long serialVersionUID = 1094801825228386363L;
-	
-	private String pwd;
-        
-	private String msg;
-	         
+	private static final long serialVersionUID = 1094801825228386363L;	
+	private String pwd;        
+	private String msg;	         
         private String user;
 
 	public String getPwd() {
@@ -74,12 +65,10 @@ public class Login implements Serializable {
 //							"Please enter correct username and Password"));
 
 
-// message is not shown, seems bug in this version
+                        // message is not shown, seems bug in this version
                         FacesContext fc =  FacesContext.getCurrentInstance();
                         FacesMessage fm = new FacesMessage("Invalid username or password");
                         fc.addMessage("fm_id:login-btn", fm);   
-                        
-                        
                         
                         return "login";
 		}
