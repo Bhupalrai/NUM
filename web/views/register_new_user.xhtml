@@ -1,16 +1,65 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Network User Manager 1.0</title>
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Network User Manager 1.0</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <h:outputStylesheet library="css" name="bootstrap.min.css"/>
-        <h:outputScript library="js" name="num_js.js" />
-</h:head>
-<h:body>
+        <h:outputStylesheet library="css" name="CSS.css"/>
+        <h:outputScript library="js" name="register_new.js" />
+    </h:head>
 
-</h:body>
+    <h:body>
+        <div class="header">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Monitor</a>
+                <a href="#">About</a>
+                <img src="logo.jpg" alt="logo"/>
+            </nav>
+        </div>
+
+       <h:form  id="myForm" >
+            <h1>Register new user</h1>
+            <div>Note:All fields are required</div><br></br>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="fname">First Name</h:outputLabel>
+                <h:inputText value="#{RegisterUser.fName}" id="fname" required="true"></h:inputText>
+                <br>
+                </br>
+                <h:outputLabel for="lname">Last Name</h:outputLabel>
+                <h:inputText value="#{RegisterUser.lName}" id="lname" required="true"></h:inputText>
+                <br>
+                </br>
+
+                <h:outputLabel for="MAC">Device MAC Address</h:outputLabel>
+                <h:inputText value="#{RegisterUser.MAC}" required="true"></h:inputText>
+                <br>
+                </br>
+
+                <h:outputLabel for="dname">Device Name</h:outputLabel>
+                <h:inputText value="#{RegisterUser.dName}" required="true"></h:inputText>
+                <br>
+                </br>
+
+                <h:outputLabel for="IP">Assign IP</h:outputLabel>
+                <h:inputText value="#{RegisterUser.IP}" required="true"></h:inputText>
+                <br>
+                </br>
+
+                <h:outputLabel for="band">Bandwidth</h:outputLabel>
+                <h:inputText value="#{RegisterUser.band}" required="true"></h:inputText>
+                <br>
+                </br>
+                <h:button value="Cancel"></h:button>
+                <h:commandButton  value="Submit" onclick="valid()"></h:commandButton>
+
+
+            </h:panelGrid> 
+
+        </h:form>
+
+    </h:body>
 </html>

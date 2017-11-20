@@ -1,0 +1,112 @@
+body{
+    background: #cccccc;
+}
+.header{
+    width: 100%;
+    position:relative;
+    top:5px;
+    background: #3399ff;
+    padding-top: 10px;
+    padding: 15px;
+}
+
+nav img{
+    position: relative;
+    float: left;
+    top: -15px;
+    left: 20px;
+    max-width: 80px;
+    max-height:63px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    font-family: Century Gothic;
+    font-size: 15px;
+    display: inline-block;
+    padding: 7px 60px; /*space between home about*/
+}
+
+h1{
+    padding-left: 70px;
+    font-family: Century Gothic;
+}
+
+div{
+    color:red;
+    position: relative;
+    top: 25px;
+    left:15px;
+    padding-left: 125px;
+    font-size: 10px;
+}
+
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 250px;
+    text-align: right;
+    font-family: Century Gothic;
+    font-size: 15px;
+
+
+}
+input {
+    display: inline-block;
+    float: left;
+    background: #cccccc;
+    position: relative;
+    left: 15px;
+    border-color: #cccccc;
+
+}
+select{
+    display: inline-block;
+    float: left;
+    background: #cccccc;
+    position: relative;
+    left: 15px;
+}
+
+form a{
+    position: relative;
+    left: 100px;
+    top: 30px;
+    height: 50px;
+    width: 50px;
+    background: #3399ff;
+    color:white;
+    text-decoration: none;
+    font-family: Century Gothic;
+    padding: 6px 26px;
+    font-size: 20px;
+
+}
+
+input[type=submit]{
+    position: relative;
+    left: 350px;
+    top: 24px;
+    color: white;
+    background: #3399ff;
+    height: 35px;
+    width: 120px;
+    font-family: Century Gothic;
+    font-size: 20px;
+    padding: 8px 26px;
+    border: white;
+}
+
+#footer h2{
+    width: 100%;
+    color: white;
+    position:relative;
+    top:370px;
+    background: #3399ff;
+    padding-top: 10px;
+    padding: 15px;
+}
+
